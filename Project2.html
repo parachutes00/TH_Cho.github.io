@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500&family=Sarabun&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>TaeHun's Blog</title>
+    <script src="https://kit.fontawesome.com/2410bff4ea.js"
+            crossorigin="anonymous"></script>
+    <script src="main.js" defer></script>
+
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar_logo">
+        <i class="fa-solid fa-basketball"></i>
+        <a href="Introduction.html">TaeHun's Blog</a>
+      </div>
+      <ul class="navbar_menu">
+        <li><a href="Introduction.html">Introduction</a></li>
+        <li><a href="Publications.html">Publications</a></li>
+        <li><a href="Current_Projects.html">Current Project</a></li>
+        <li><a href="Past_Projects.html">Past Projects</a></li>
+      </ul>
+
+      <ul class="navbar_icons">
+        <li><i class="fa-solid fa-envelope"></i></li>
+        <li><i class="fa-brands fa-instagram"></i></li>
+      </ul>
+
+      <a href="#" class="navbar_toggleBtn">
+        <i class="fa-solid fa-bars"></i></a>
+    </nav>
+
+
+    <div class="continer">
+      <div class="sub_menu">
+        <ul>
+          <li><a href="Project1.html">Project #1</a></li>
+          <li><a href="Project2.html">Project #2</a></li>
+          <li><a href="Project3.html">Project #3</a></li>
+          <li><a href="Project4.html">Project #4</a></li>
+          </ul>
+      </div>  
+
+
+    <div class="past_projects">
+      <h2 class="only">Past Project #2</h2>
+      <h3>Investigating functional connectivity alterations in emotional laborers <br>using machine learning methodology
+
+    </h3>
+
+    <p>
+      Emotional labor is suggested to have detrimental consequences on laborers in 
+      that it requires them to act on display rules which are frequently out of line with what the individual genuinely feels. 
+      Based on the model of emotion regulation proposed by Gross (1998), 
+      such suppression is recognized as a response-focused form of emotional regulation conceptualized as surface acting. 
+      As mentioned, it is quite clear that surface acting may bring about negative psychological adversities 
+      including depressive symptoms (Cho & Park, 2016; Kim & Cho, 2017; Yom et al, 2017) and social anxiety (Reyhanoglu & Balikçioğlu, 2019; Yeom, 2019).
+    </p>
+
+    <p>
+    Acknowledging the fact that previous research had succeeded in using functional 
+    connectivity characteristics for distinguishing individuals with depression (Zeng et al., 2012)
+    or social anxiety (Liu et al., 2015) via machine learning, we aimed to investigate if the same could be done with emotional laborers.
+    To this end, our team utilized the functional connectivity-based multivoxel pattern analysis (fcMVPA) 
+    and machine learning algorithm to investigate the neurobiological characteristics associated with emotional labor experience.
+    </p>
+
+    <p>
+    We recruited a total of 48 participants consisting of 18 individuals in the emotional laborer group (EL group) 
+    and 30 individuals in the control group (CTRL group). 
+    The emotional laborers were frontline call center employees from Dasan Call Center. 
+    Their task was to receive civil complaints and give relevant consultation on administrative matters. 
+    Demographic information and results in behavioral measurement are as follows.
+    </p>
+
+    <div class="project1_image">
+      <img src="images/past_projects/p2-1.png" alt="" height="300px">
+    </div>
+
+    <p>
+      The mean CESD score of the EL group (M = 25.29, SD = 10.37) was significantly higher than that of the CTRL group (M = 13.40, SD = 8.46), 
+      t(45) = 4.27, p < .001. The mean LSAS score of the EL group (M = 49.00, SD = 18.47) 
+      was also significantly higher than that of the CTRL group (M = 25.67, SD = 19.54), t(45) = 4.01, p < .001.
+    </p>
+
+    <p>
+      Ten minutes of resting state fMRI were collected. Preprocessing including slice timing, realignment, normalization and smoothing 
+      were applied through DPABI (Yan et al., 2016), and these preprocessed data were submitted to ICA-AROMA 
+      to remove motion artifact and minimize head motion confounds.
+    </p>
+
+    <p>
+      We parcellated the whole-brain into 246 nodes using the Brainnetome Atlas (Fan et al., 2016). 
+      The mean time-series were then calculated for each region by averaging the BOLD signal time-series of all voxels within each region, 
+      resulting in 246 representative time-series for each participant. For each participant, 
+      a 246 × 246 connectivity matrix was computed using Pearson correlation coefficients (r) 
+      between all pairs of the 246 nodes and then subjected to Fisher’s r-to-z transformation. 
+      Since these matrices were symmetric with respect to the diagonal, 
+      the lower-half triangular parts of these functional connectivity matrices (246 × (246 - 1) / 2 = 30,135) 
+      were then used as input features for pattern classification.    
+    </p>
+    
+    <p>
+      We conducted fcMVPA to test whether resting-state functional connectivity patterns could be accurately classified based on their group membership (i.e., emotional laborers vs. healthy controls). For these group classification tasks, we employed support vector machine (SVM) with a linear kernel and a constant regularization parameter of c = 1 using MATLAB Spider toolbox (http://people.kyb.tuebingen.mpg.de/spider). Classification performance was estimated using a leave-one-out cross-validation (LOOCV) method such that iteratively test data from one participant with an SVM classifier trained with data from the remaining n – 1 participants. For each iteration, the accuracy would be 1 if the classifier correctly predicted the class label of the test data, whereas the accuracy would be 0 if the prediction was incorrect. The accuracies calculated from all 48 rounds of iterations were then averaged to obtain a single representative accuracy measure.
+    </p>
+
+    <p>
+      It is important to note that the larger number of features does not necessarily improve classification performance in machine learning techniques, because it can suffer from the curse of dimensionality. Also, from a neuroscientific perspective, it is also important to increase the interpretability of fcMVPA results, which would decrease as the number of connectivity features increases. Therefore, in order to simultaneously explore the potentially informative features for discriminating two groups and find out the optimal number of features, we applied a filter-based feature selection method using t-test and then iteratively estimated the classifier performance according to the number of features included. For feature selection, 48 iterations of two-sample t-tests were performed to compare the difference between the means of the two populations (i.e., emotional laborers vs. healthy controls) with the data from 47 out of 48 participants by excluding one sample per each iteration. The t-scores obtained from 48 iterations for each feature were then averaged to generate one representative t-score value for each feature. The 30,135 features were then ranked in descending order according to their absolute t-score value, and the z-score transformation was applied to the r-value of each feature to improve normality. We then compute the classification accuracies as a function of the number of features included, Specifically, in the n-th iteration, SVM using the top n features classified whether the class label of a given vector (i.e., functional connectivity pattern) was ‘EL’ or ‘CTRL’. As a result, this procedure yielded a total of 30,135 LOOCV classification accuracy measures.
+    </p>
+
+    <p>
+      Finally, we summarized the edge features of our final classifier using measures drawn from the graph theory. The degree centrality and betweenness centrality for each node was calculated, and nodes with high degree or betweenness centrality were identified.
+    </p>
+
+    <p>
+      Detailed information on methods are explained in the published manuscript.
+    </p>
+
+    <div class="project1_image">
+      <img src="images/past_projects/p2-2.png" alt="" height="300px">
+      <img src="images/past_projects/p2_3.jpg" alt="" height="300px">
+    </div>
+
+
+    <p>
+    For pattern classification, we found that the two groups (EL vs. CTRL) could be successfully classified based on their resting-state functional connectivity patterns. The peak classification accuracy reached 91.7% when the top 326 edges were included, suggesting that the two groups showed different intrinsic connectivity pattern. To test the statistical significance of the peak classification accuracy obtained from fcMVPA, we conducted permutation testing. The results showed that the permutation accuracies of 1000 iterations remained near 50% except for the initial classification results with few features, which suggests that our classification methods are unbiased. The peak classification accuracy of 91.7% with 326 edges was statistically significant (p = 0.002; permutation test), indicating that this peak accuracy was indeed derived from two distinct functional connectivity patterns of two groups.
+    </span></pclass=>
+
+    <div class="project1_image">
+      <img src="images/past_projects/p2_4.png" alt="" height="300px">
+    </div>
+    
+    <p>
+      For pattern classification, we found that the two groups (EL vs. CTRL) could be successfully classified based on their resting-state functional connectivity patterns. The peak classification accuracy reached 91.7% when the top 326 edges were included, suggesting that the two groups showed different intrinsic connectivity pattern. To test the statistical significance of the peak classification accuracy obtained from fcMVPA, we conducted permutation testing. The results showed that the permutation accuracies of 1000 iterations remained near 50% except for the initial classification results with few features, which suggests that our classification methods are unbiased. The peak classification accuracy of 91.7% with 326 edges was statistically significant (p = 0.002; permutation test), indicating that this peak accuracy was indeed derived from two distinct functional connectivity patterns of two groups.
+      </span></pclass=>
+
+    <p>
+      To further investigate the nature of our connectivity-based classification results, we computed the distance from hyperplane for each participant and then examined whether this value correlated with behavioral measures. This analysis revealed that the distance from hyperplane showed a significant correlation with the CESD score (r = 0.40, p < 0.001), indicating that the higher the depression score, the more confidently the participants were classified as ‘EL’. Also, the LSAS score was positively correlated with the distance from hyperplane (r = 0.35, p < 0.001), indicating that the higher social anxiety score, the more confidently the participants were classified as ‘EL’.
+    </span></p>
+
+    <p>
+      The node with the highest degree centrality was the superior parietal lobule (SPL). In addition, several other nodes including the inferior parietal lobule (IPL), posterior superior temporal sulcus (pSTS), thalamus, medial frontal gyrus (MFG), superior frontal gyrus (SFG) also showed higher degree centrality. To further explore the characteristics of the edge feature of our classifier, we additionally calculated the SVM weight for each edge. When the degree centrality was computed separately according to the sign of SVM weight (i.e., + weight for EL, - weight for CTRL), the SPL and IPL showed higher degree centrality calculated from + weight edges, and the OFC and MFG showed higher degree centrality calculated from – weight edges. We also computed the weighted betweenness centrality with the SVM weight for each edge. The results were similar to the results of the previous degree centrality analysis. The node with the highest betweenness centrality was the SPL, and the MFG, SFG, OFC, thalamus, pSTS, IPL nodes also showed higher value of weighted betweenness centrality      
+    </span></pclass=>
+
+    <p>
+      Altogether, these results suggest that the functional connectivity features of emotional laborers may be distinguishable from that of a control group, and that emotional laborers’ depression or social anxiety may be related to such classification. The hub regions elicited in the study are in line with previous research on the neural basis of emotion regulation. For example, the IPL and SPL are suggested to be related to the appraisal process in emotion regulation based on experiments using emotional stimuli and fMRI observations (Drabant et al., 2009; McRae, 2010; Ochsner et al., 2002; Roberto, 2013).     </span></pclass=>
+
+    <p>
+      Also, in a comprehensive network perspective, the high centrality demonstrated by certain nodes suggest further implications. As a part of the default mode network, the SPL is proposed to be involved in the notion of ‘surveillance’ or ‘watchfulness’ to environmental cues in resting-state (Davey et al., 2016). Based on the high LSAS score and focused connectivity to the SPL, it is plausible to interpret that the EL group may exhibit excess surveillance, especially to social cues, even when tasks are absent. This interpretation is further supported by the fact that the pSTS, which was observed as another key node, is known to be a focal point of the brain network for social perception (Lahnakoski et al., 2012). It is also noteworthy that the IPL, which is also a part of the default mode network, functions as a critical convergence area for various networks concerning attention and social interaction (Kernbach et al., 2018; Segheir, 2013), and serves as a key region for social cognition (Numssen et al., 2021). Notably, regarding its function in attention, it is suggested that the IPL is associated with allocating attention to relevent information, encoding salient stimuli, and maintaining attention (Ciaramelli et al., 2008; Singh-Curry & Husain, 2009). These network characteristics altogether may reflect the prolonged distress the call center workers experience receiving constant complaints from other people and the sensitivity they possess in discerning others’ emotions, perhaps to express their own as the display rules require.
+    </span></pclass=>
+    
+
+  </div>  
+  </div>
+
+  </body>
+
+
+</html>
