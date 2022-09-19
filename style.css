@@ -227,7 +227,7 @@ hr.one{
 
 .continer{
   display: grid;
-  grid-template-columns: 10% 90% ;
+  grid-template-columns: 125px auto ;
 }
 
 
@@ -242,6 +242,10 @@ hr.one{
 
 ul{
   padding-left: 22px;
+}
+
+.sub_menu_li{
+  position: fixed;
 }
 
 .past_projects {
