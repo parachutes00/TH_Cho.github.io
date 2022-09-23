@@ -73,6 +73,7 @@ p {
   color: var(--color-black);
   margin: 20px 0;
   line-height: 1.5em;
+  text-align: left;
 }
 
 *{
@@ -241,7 +242,7 @@ hr.one{
 }
 
 ul{
-  padding-left: 22px;
+  padding-left: 18px;
 }
 
 .sub_menu_li{
