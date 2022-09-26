@@ -354,17 +354,12 @@ ul{
     display: flex;
   }
 
-  .introduction{
-    width: auto;
-  }
-
-  .current_project{
-    width: auto;
-  }
-
+  .introduction,
+  .current_project,
   .publications{
     width: auto;
+    margin-left: 12px;
+    margin-right: 12px;
   }
-
 
 }
