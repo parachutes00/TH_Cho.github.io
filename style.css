@@ -58,7 +58,7 @@ h2.many{
 
 h2.only{
   margin-top: 110px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 h3 {
@@ -67,6 +67,7 @@ h3 {
   color: var(--color-black);
   margin: 8px 0;
   text-align:center;
+  line-height: 27px;
 }
 
 p {
@@ -144,7 +145,7 @@ b{
   border-radius: 2px;
 }
 
-.navbar_icons {
+.navbar_icon {
   font-size: 16px;
   list-style: none;
   color: var(--text-color);
@@ -152,9 +153,6 @@ b{
   padding-left: 0;
 }
 
-.navbar_icons li{
-  padding: 2px 8px;
-}
 
 .navbar_toggleBtn{
   display: none;
@@ -321,6 +319,11 @@ ul{
   margin: auto;
 }
 
+#click_here{
+  color:#00008B;
+ 
+}
+
 
 @media screen and (max-width:768px){
   .navbar{
@@ -343,7 +346,7 @@ ul{
 
   }
 
-  .navbar_icons{
+  .navbar_icon{
     display: none;
     justify-content: center;
     width: 100%;
@@ -354,7 +357,7 @@ ul{
   }
 
   .navbar_menu.active,
-  .navbar_icons.active {
+  .navbar_icon.active {
     display: flex;
   }
 
