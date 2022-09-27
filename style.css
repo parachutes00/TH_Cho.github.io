@@ -107,6 +107,10 @@ ul{
   list-style-type: none;
 }
 
+b{
+  font-weight: 600;
+}
+
 
 .navbar{
   display: flex;
